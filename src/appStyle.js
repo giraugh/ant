@@ -7,6 +7,11 @@ export const Container = styled.section`
   gap: 1em;
   padding: 2em;
   margin-top: 4em;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
 `
 
 export const Grid = styled.div`
@@ -17,17 +22,25 @@ export const Grid = styled.div`
 `
 
 export const GridCell = styled.div`
-  width: 1em;
-  height: 1em;
+  --cell-size: 1.1em;
+  width: var(--cell-size);
+  height: var(--cell-size);
   background: lightgrey;
-  transition: background .1s;
+  transition: background .05s;
 
   &.filled {
     background: darkgrey;
   }
 
   &.ant {
-    background: #03a9f4;
+    &::after {
+      content: '🐜';
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      line-height: 100%;
+    }
   }
 `
 
@@ -43,9 +56,14 @@ export const Button = styled.button`
   cursor: pointer;
   border: 2px solid transparent;
 
-  &:hover {
+  &:hover:not([disabled]){
     background: white;
     color: var(--highlight);
     border: 2px solid var(--highlight);
+  }
+
+  &[disabled] {
+    opacity: .5;
+    cursor: default;
   }
 `

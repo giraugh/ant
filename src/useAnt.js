@@ -8,7 +8,7 @@ const useAnt = (gridWidth, gridHeight) => {
   // Construct Grid
   useEffect(() => {
     setGridState(
-      Array.from({ length: gridHeight*gridWidth }).map(() => Math.random() < .5 ? 1 : 0)
+      Array.from({ length: gridHeight*gridWidth }).map(() => 0)
     )
     setAntPos([Math.floor(gridWidth / 2), Math.floor(gridHeight / 2)])
   }, [gridWidth, gridHeight])
@@ -38,8 +38,15 @@ const useAnt = (gridWidth, gridHeight) => {
     setAntDir(nextAntDir)
   }
 
+  const randomise = () => {
+    setGridState(
+      Array.from({ length: gridHeight*gridWidth }).map(() => Math.random() < .5 ? 1 : 0)
+    )
+    setAntPos([Math.floor(gridWidth / 2), Math.floor(gridHeight / 2)])
+  }
+
   const antIndex = antPos[1] * gridWidth + antPos[0]
-  return { state: { cells: gridState, antIndex }, next }
+  return { state: { cells: gridState, antIndex }, next, randomise }
 }
 
 export default useAnt
