@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import useAnt from './useAnt'
+import { Grid, GridCell, Container, Button } from './appStyle.js'
+
+const App = () => {
+  const [gridWidth, gridHeight] = [21, 21]
+  const { state, next } = useAnt(gridWidth, gridHeight)
+
+  return <Container>
+    <h1>Langton's Ant</h1>
+    <Grid style={{'--width': gridWidth, '--height': gridHeight}}>
+      {state.cells.map((val, i) =>
+        <Cell filled={val} isAnt={state.antIndex === i} key={i}/>
+      )}
+    </Grid>
+    <Button onClick={next}>Next</Button>
+  </Container>
 }
 
-export default App;
+const Cell = ({ filled, isAnt }) =>
+  <GridCell className={isAnt ? ('ant') : (filled ? 'filled' : 'empty')} />
+
+export default App
