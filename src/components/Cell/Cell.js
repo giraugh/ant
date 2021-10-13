@@ -2,7 +2,9 @@ import React from 'react'
 
 import { GridCell } from './cellStyle'
 
-const Cell = ({ filled, isAnt }) =>
-  <GridCell className={`${isAnt ? 'ant' : ''} ${filled ? 'filled' : 'empty'}`} />
+const Cell = ({ filled, isAnt, onClick }) =>
+  <GridCell
+    className={`${isAnt ? 'ant' : ''} ${filled ? 'filled' : 'empty'}`}
+    onMouseEnter={e => e.buttons > 0 ? onClick() : null} />
 
 export default Cell

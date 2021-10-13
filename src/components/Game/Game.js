@@ -10,7 +10,7 @@ const PLAY_INTERVAL = 10
 const Game = () => {
   const [playing, setPlaying] = useState(true)
   const [gridWidth, gridHeight] = [31, 31]
-  const { state, next } = useAnt(gridWidth, gridHeight)
+  const { state, next, flipCellState } = useAnt(gridWidth, gridHeight)
 
   // Setup a callback to call next when 'playing'
   useEffect(() => {
@@ -25,7 +25,7 @@ const Game = () => {
     <h1>🐜</h1>
     <Grid style={{'--width': gridWidth, '--height': gridHeight}}>
       {state.cells.map((val, i) =>
-        <Cell filled={val} isAnt={state.antIndex === i} key={i}/>
+        <Cell filled={val} isAnt={state.antIndex === i} key={i} onClick={() => flipCellState(i)}/>
       )}
     </Grid>
     <Button onClick={() => setPlaying(!playing)}>{playing ? 'Pause' : 'Play'}</Button>
