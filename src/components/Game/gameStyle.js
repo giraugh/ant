@@ -6,7 +6,8 @@ export const Container = styled.section`
   align-items: center;
   gap: 1em;
   padding: 2em;
-  margin-top: 4em;
+  margin-top: 0em;
+  padding-top: .2em;
 
   h1 {
     font-size: 2.5rem;
