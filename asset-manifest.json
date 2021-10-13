@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/ant/static/css/main.55e500e9.chunk.css",
-    "main.js": "/ant/static/js/main.aac6ef27.chunk.js",
-    "main.js.map": "/ant/static/js/main.aac6ef27.chunk.js.map",
+    "main.js": "/ant/static/js/main.32d1e953.chunk.js",
+    "main.js.map": "/ant/static/js/main.32d1e953.chunk.js.map",
     "runtime-main.js": "/ant/static/js/runtime-main.225948b1.js",
     "runtime-main.js.map": "/ant/static/js/runtime-main.225948b1.js.map",
-    "static/js/2.2db25d99.chunk.js": "/ant/static/js/2.2db25d99.chunk.js",
-    "static/js/2.2db25d99.chunk.js.map": "/ant/static/js/2.2db25d99.chunk.js.map",
+    "static/js/2.ef892e7d.chunk.js": "/ant/static/js/2.ef892e7d.chunk.js",
+    "static/js/2.ef892e7d.chunk.js.map": "/ant/static/js/2.ef892e7d.chunk.js.map",
     "index.html": "/ant/index.html",
     "static/css/main.55e500e9.chunk.css.map": "/ant/static/css/main.55e500e9.chunk.css.map",
-    "static/js/2.2db25d99.chunk.js.LICENSE.txt": "/ant/static/js/2.2db25d99.chunk.js.LICENSE.txt"
+    "static/js/2.ef892e7d.chunk.js.LICENSE.txt": "/ant/static/js/2.ef892e7d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.225948b1.js",
-    "static/js/2.2db25d99.chunk.js",
+    "static/js/2.ef892e7d.chunk.js",
     "static/css/main.55e500e9.chunk.css",
-    "static/js/main.aac6ef27.chunk.js"
+    "static/js/main.32d1e953.chunk.js"
   ]
 }
