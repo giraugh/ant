@@ -22,6 +22,15 @@ export const Grid = styled.div`
   overflow: hidden;
 `
 
+export const ButtonGroup = styled.div`
+  display: flex;
+  gap: .5em;
+
+  button {
+    min-width: 7em;
+  }
+`
+
 export const Button = styled.button`
   --highlight: #585d9d;
   outline: none;

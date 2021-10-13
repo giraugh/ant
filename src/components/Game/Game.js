@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { useAnt } from 'hooks'
 import { Cell } from 'components'
-import { Grid, Container, Button } from './gameStyle.js'
+import { Grid, Container, Button, ButtonGroup } from './gameStyle.js'
 
 const PLAY_INTERVAL = 10
 
@@ -10,7 +10,7 @@ const PLAY_INTERVAL = 10
 const Game = () => {
   const [playing, setPlaying] = useState(true)
   const [gridWidth, gridHeight] = [31, 31]
-  const { state, next, flipCellState } = useAnt(gridWidth, gridHeight)
+  const { state, next, flipCellState, resetGrid } = useAnt(gridWidth, gridHeight)
 
   // Setup a callback to call next when 'playing'
   useEffect(() => {
@@ -28,8 +28,11 @@ const Game = () => {
         <Cell filled={val} isAnt={state.antIndex === i} key={i} onClick={() => flipCellState(i)}/>
       )}
     </Grid>
-    <Button onClick={() => setPlaying(!playing)}>{playing ? 'Pause' : 'Play'}</Button>
-    <Button onClick={next} disabled={playing}>Next</Button>
+    <ButtonGroup>
+      <Button onClick={next} disabled={playing}>Next</Button>
+      <Button onClick={() => setPlaying(!playing)}>{playing ? 'Pause' : 'Play'}</Button>
+    </ButtonGroup>
+    <Button onClick={resetGrid}>Reset</Button>
   </Container>
 }
 

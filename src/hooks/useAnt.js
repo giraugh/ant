@@ -19,6 +19,13 @@ const useAnt = (gridWidth, gridHeight) => {
     setGridState(nextState)
   }
 
+  const resetGrid = () => {
+    setGridState(
+      Array.from({ length: gridHeight*gridWidth }).map(() => 0)
+    )
+    setAntPos([Math.floor(gridWidth / 2), Math.floor(gridHeight / 2)])
+  }
+
   // Progress state
   const next = () => {
     // Find ant
@@ -47,7 +54,7 @@ const useAnt = (gridWidth, gridHeight) => {
   }
 
   const antIndex = antPos[1] * gridWidth + antPos[0]
-  return { state: { cells: gridState, antIndex }, next, flipCellState }
+  return { state: { cells: gridState, antIndex }, next, flipCellState, resetGrid }
 }
 
 export default useAnt
