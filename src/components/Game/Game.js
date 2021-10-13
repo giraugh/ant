@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import { useAnt } from 'hooks'
+import { useAnt, useQueryParam } from 'hooks'
 import { Cell } from 'components'
 import { Grid, Container, Button, ButtonGroup } from './gameStyle.js'
 
@@ -9,7 +9,8 @@ const PLAY_INTERVAL = 10
 // Game component contains header, grid and buttons for play control
 const Game = () => {
   const [playing, setPlaying] = useState(true)
-  const [gridWidth, gridHeight] = [31, 31]
+  const [gridSize] = useQueryParam('size', 31)
+  const [gridWidth, gridHeight] = [gridSize, gridSize]
   const { state, next, flipCellState, resetGrid } = useAnt(gridWidth, gridHeight)
 
   // Setup a callback to call next when 'playing'
