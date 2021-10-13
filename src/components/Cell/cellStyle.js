@@ -4,11 +4,14 @@ export const GridCell = styled.div`
   --cell-size: 1.1em;
   width: var(--cell-size);
   height: var(--cell-size);
-  background: lightgrey;
   transition: background .05s;
 
+  &.empty {
+    background: white;
+  }
+
   &.filled {
-    background: darkgrey;
+    background: #78768b;
   }
 
   &.ant {

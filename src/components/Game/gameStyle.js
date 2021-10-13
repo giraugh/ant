@@ -22,7 +22,7 @@ export const Grid = styled.div`
 `
 
 export const Button = styled.button`
-  --highlight: #03a9f4;
+  --highlight: #585d9d;
   outline: none;
   border: none;
   padding: .5em 2em;
